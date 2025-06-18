@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: zib34nfxb-python-gitops
+  description: This is GitOps manifest for zib34nfxb-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=zib34nfxb-python
+    backstage.io/kubernetes-id: zib34nfxb-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: zib34nfxb-python
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:zib34nfxb-python
